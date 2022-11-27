@@ -29,6 +29,8 @@ mv ~/.kube/bk_config  ~/.kube/config
 # Setup your EKS cluster 
 ```
 eksctl create cluster --name fortune --region us-east-1
+aws eks --region us-east-1 update-kubeconfig --name fortune #connect to it
+
 ```
 
 # Setup your nodegroup 
