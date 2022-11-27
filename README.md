@@ -13,7 +13,7 @@ Commit code -> Github Actions -> Run tests -> push to Amazon EKS [Managed Kubern
 
 # Let's GO! 
 
-You need these: 
+You need these: <br>
 <img src='https://raw.githubusercontent.com/james-ransom/eks-gha-auto-deploy-fortune/main/images/keysyouneed.png' width='500px'>
 
 
