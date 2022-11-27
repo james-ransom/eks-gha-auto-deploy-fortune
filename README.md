@@ -99,8 +99,22 @@ fortune	small-group-scaling	ACTIVE	2022-11-26T01:54:06Z	1		10		6			t2.small	AL2_
 # I want to scale! 
 
 ```
-kubect apply -f hpa.yaml
+kubect apply -f hpa.yaml #horizontal pod scaler 
 ```
 
+```
+kubect apply -f cluster-autoscaler-autodiscover.yaml #nodeautoscaler
+```
+
+# I want to see the scaling work! 
+```
+$ kubectl get hpa
+NAME          REFERENCE                TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
+backend-k8s   Deployment/backend-k8s   0%/60%    1         10000     2          2d2h
+```
+
+```
+kubectl -n kubectlube-system logs -f deployment.apps/cluster-autoscaler
+```
 
 [force push v3]
