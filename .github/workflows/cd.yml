@@ -1,0 +1,60 @@
+name: cd
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env: 
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: ${{ secrets.GCR_REPRO_URL }}/fortune
+  SHORT_SHA: $(echo ${{ github.sha }} | cut -c 1-8)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone
+      uses: actions/checkout@v2
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+      
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Build, tag, and push image to Amazon ECR
+      id: build-image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+      run: |
+        aws ecr describe-repositories --repository-name fortune
+        docker build --tag ${{ secrets.GCR_REPRO_URL }}/fortune:latest .
+        docker build --tag ${{ secrets.GCR_REPRO_URL }}/fortune:${{ env.SHORT_SHA }}  .        
+        docker push ${{ secrets.GCR_REPRO_URL }}/fortune:latest 
+        docker push ${{ secrets.GCR_REPRO_URL }}/fortune:${{ env.SHORT_SHA }} 
+    - name: Install and configure kubectl
+      run: |
+        echo "Installing..."
+        
+    - name: Deploy
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+      run: |
+        echo "${{ secrets.KUBECONFIG }}" > out.file 
+        cat out.file > kubeconfig.yaml
+        export KUBECONFIG=kubeconfig.yaml
+                
+        SHA_URL="${{ env.SHORT_SHA }}"
+        sed -i "s/SHA_URL/$SHA_URL/g" k8s/deployment.yaml
+
+        cat k8s/deployment.yaml
+        kubectl apply -f k8s/deployment.yaml -f k8s/service.yaml

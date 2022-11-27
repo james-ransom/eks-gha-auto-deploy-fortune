@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-k8s
+  labels:
+    env: 'dev'
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 100%
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: backend-k8s
+  template:
+    metadata:
+      labels:
+        app: backend-k8s
+    spec:
+      containers:
+        - name: php-k8s
+          image: 033414239422.dkr.ecr.us-east-1.amazonaws.com/fortune:SHA_URL 
+          imagePullPolicy: Always
+          env:
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+              httpHeaders:
+                - name: X-Health
+                  value: "1"
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+              httpHeaders:
+                - name: X-Health
+                  value: "1"
+            initialDelaySeconds: 60
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 600m
