@@ -5,7 +5,7 @@
 Commit code -> Github Actions -> Run tests -> push to Amazon EKS [Managed Kubernetes Service – Amazon EKS]
 
 
-# This is an exmaple of: 
+# This is an example of: 
 
 1) Github actions building the image after any commit and push
 
