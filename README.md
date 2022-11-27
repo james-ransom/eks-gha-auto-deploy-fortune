@@ -88,7 +88,12 @@ kubernetes    ClusterIP      10.100.0.1       <none>                            
 $ 
 ```
 
+```
+$ eksctl get nodegroup --cluster=fortune 
 
+CLUSTER	NODEGROUP		STATUS	CREATED			MIN SIZE	MAX SIZE	DESIRED CAPACITY	INSTANCE TYPE	IMAGE ID	ASG NAME						TYPE
+fortune	small-group-scaling	ACTIVE	2022-11-26T01:54:06Z	1		10		6			t2.small	AL2_x86_64	eks-small-group-scaling-XX	managed
+```
 
 
 
