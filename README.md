@@ -31,11 +31,7 @@ eksctl create cluster --name fortune --region us-east-1
 ```
 
 
-# Setup your container registry 
-```
-aws ecr create-repository --region us-east-1 --repository-name fortune
-```
-To get GCR_REPRO_URL
+# Setup your container registry and get your GCR_REPRO_URL
 ```
 $ aws ecr create-repository --region us-east-1 --repository-name fortune
 {
