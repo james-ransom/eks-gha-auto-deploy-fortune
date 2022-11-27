@@ -62,12 +62,32 @@ $ aws ecr create-repository --region us-east-1 --repository-name fortune
     }
 }
 ```
+In the above case your GCR_REPRO_URL is XXXXXXXX.dkr.ecr.us-east-1.amazonaws.com
+
 
 # Let's BUILD! Any commit will trigger a build and push! 
 <img src='https://raw.githubusercontent.com/james-ransom/eks-gha-auto-deploy-fortune/main/images/build.png' width='400px'>
 
+# How can we see our pods/nodes/endpoints
+```
+aws eks --region us-east-1 update-kubeconfig --name fortune
 
-In the above case your GCR_REPRO_URL is XXXXXXXX.dkr.ecr.us-east-1.amazonaws.com
+$ kubectl get pods
+NAME                           READY   STATUS             RESTARTS   AGE
+backend-k8s-5b4c97b57b-7mkxr   0/1     Pending            0          33s
+backend-k8s-5b4c97b57b-gbzq7   0/1     Pending            0          33s
+backend-k8s-5b4c97b57b-km4qn   0/1     Pending            0          33s
+
+```
+
+```
+$ kubectl get services
+NAME          TYPE           CLUSTER-IP       EXTERNAL-IP                                                               PORT(S)        AGE
+backend-k8s   LoadBalancer   10.100.253.226   XXXXXXX.us-east-1.elb.amazonaws.com   80:32270/TCP   15h
+kubernetes    ClusterIP      10.100.0.1       <none>                                                                    443/TCP        43d
+$ 
+```
+
 
 
 
