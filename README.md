@@ -108,14 +108,17 @@ kubect apply -f cluster-autoscaler-autodiscover.yaml #nodeautoscaler
 ```
 
 # I want to see the scaling work! 🚀🚀🚀
+
+View the pod auto scaler
 ```
 $ kubectl get hpa
 NAME          REFERENCE                TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
 backend-k8s   Deployment/backend-k8s   0%/60%    1         10000     2          2d2h
 ```
 
+View the node autoscaler logs
 ```
 kubectl -n kubectlube-system logs -f deployment.apps/cluster-autoscaler #note! you will have to update the cluster name from fortune, if you change it
 ```
 
-[force push v3]
+# Profit!
