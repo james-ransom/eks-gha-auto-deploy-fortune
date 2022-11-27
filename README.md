@@ -96,5 +96,11 @@ fortune	small-group-scaling	ACTIVE	2022-11-26T01:54:06Z	1		10		6			t2.small	AL2_
 ```
 
 
+# I want to scale! 
+
+```
+kubect apply -f hpa.yaml
+```
+
 
 [force push v3]
