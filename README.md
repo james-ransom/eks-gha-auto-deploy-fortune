@@ -132,3 +132,4 @@ I1127 06:04:19.162477       1 static_autoscaler.go:420] No unschedulable pods
 I1127 06:04:19.162491       1 static_autoscaler.go:467] Calculating unneeded nod
 ```
 # Profit!
+<img src='https://www.opendoctor.io/retina.svg?fromgithub=1' width='50px'>
