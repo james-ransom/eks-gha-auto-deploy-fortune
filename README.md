@@ -121,6 +121,14 @@ backend-k8s   Deployment/backend-k8s   0%/60%    1         10000     2          
 View the node autoscaler logs
 ```
 kubectl -n kubectlube-system logs -f deployment.apps/cluster-autoscaler #note! you will have to update the cluster name from fortune, if you change it
-```
 
+
+I1127 06:04:19.162423       1 filter_out_schedulable.go:65] Filtering out schedulables
+I1127 06:04:19.162436       1 filter_out_schedulable.go:132] Filtered out 0 pods using hints
+I1127 06:04:19.162444       1 filter_out_schedulable.go:170] 0 pods were kept as unschedulable based on caching
+I1127 06:04:19.162450       1 filter_out_schedulable.go:171] 0 pods marked as unschedulable can be scheduled.
+I1127 06:04:19.162460       1 filter_out_schedulable.go:82] No schedulable pods
+I1127 06:04:19.162477       1 static_autoscaler.go:420] No unschedulable pods
+I1127 06:04:19.162491       1 static_autoscaler.go:467] Calculating unneeded nod
+```
 # Profit!
