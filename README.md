@@ -114,7 +114,7 @@ backend-k8s   Deployment/backend-k8s   0%/60%    1         10000     2          
 ```
 
 ```
-kubectl -n kubectlube-system logs -f deployment.apps/cluster-autoscaler
+kubectl -n kubectlube-system logs -f deployment.apps/cluster-autoscaler #note! you will have to update the cluster name from fortune, if you change it
 ```
 
 [force push v3]
