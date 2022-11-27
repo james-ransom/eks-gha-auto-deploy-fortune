@@ -30,6 +30,17 @@ mv ~/.kube/bk_config  ~/.kube/config
 eksctl create cluster --name fortune --region us-east-1
 ```
 
+# Setup your nodegroup 
+```
+eksctl create nodegroup \
+  --cluster fortune \
+  --region us-east-1 \
+  --name fortune-node \
+  --node-type m5.small \
+  --nodes 1 \
+  --nodes-min 1 \
+  --nodes-max 4 
+```
 
 # Setup your container registry and get your GCR_REPRO_URL
 ```
