@@ -1,6 +1,6 @@
 [![cd](https://github.com/james-ransom/eks-gha-auto-deploy-fortune/actions/workflows/cd.yml/badge.svg)](https://github.com/james-ransom/eks-gha-auto-deploy-fortune/actions/workflows/cd.yml)
 
-# A simple! CI/CD 🚀
+# A simple DEMO of CI/CD using GHA and EKS 🚀
 
 Commit code -> Github Actions -> Run tests -> push Amazon EKS 🔥🔥
 
