@@ -63,6 +63,10 @@ $ aws ecr create-repository --region us-east-1 --repository-name fortune
 }
 ```
 
+# Let's BUILD! Any commit will trigger a build and push! 
+
+
+
 In the above case your GCR_REPRO_URL is XXXXXXXX.dkr.ecr.us-east-1.amazonaws.com
 
 
