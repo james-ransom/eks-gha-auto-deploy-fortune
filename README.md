@@ -1,0 +1,1 @@
+# eks-gha-auto-deploy-fortune
