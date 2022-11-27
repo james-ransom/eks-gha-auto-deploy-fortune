@@ -2,7 +2,7 @@
 
 # A simple DEMO of CI/CD using GHA and EKS 🚀
 
-Commit code -> Github Actions -> Build Container Image -> push Amazon EKS 🔥🔥
+Commit code -> Github Actions -> Build Container Image -> push Amazon EKS -> Scale -> profit! 🔥🔥
 
 Demo: http://fortune.dance/
 
