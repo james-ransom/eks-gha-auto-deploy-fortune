@@ -8,4 +8,4 @@ This is an exmaple of:
 
 3) auto pushing to a eks cluster, with autoscaling enabled 
 
-[force push v2]
+[force push v3]
