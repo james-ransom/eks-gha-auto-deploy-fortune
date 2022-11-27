@@ -16,7 +16,7 @@ Commit code -> Github Actions -> Run tests -> push to Amazon EKS [Managed Kubern
 You need these in your Github actions secrets: <br>
 <img src='https://raw.githubusercontent.com/james-ransom/eks-gha-auto-deploy-fortune/main/images/keysyouneed.png' width='700px'>
 
-To get KUBECONFIG
+# To get KUBECONFIG
 
 ```
 aws eks --region us-east-1 update-kubeconfig --name fortune
