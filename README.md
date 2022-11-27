@@ -1,11 +1,20 @@
-[![cd](https://github.com/james-ransom/fortune/actions/workflows/cd.yml/badge.svg)](https://github.com/james-ransom/fortune/actions/workflows/cd.yml)
+[![cd](https://github.com/james-ransom/eks-gha-auto-deploy-fortune/actions/workflows/cd.yml/badge.svg)](https://github.com/james-ransom/eks-gha-auto-deploy-fortune/actions/workflows/cd.yml)
 
-This is an exmaple of: 
+# A simple! CI/CD
+
+Commit code -> Github Actions -> Run tests -> push to Amazon EKS [Managed Kubernetes Service – Amazon EKS]
+
+
+# This is an example of: 
 
 1) Github actions building the image after any commit and push
 
-2) Setting up blue - green deployments 
+2) auto pushing to a eks cluster, with autoscaling enabled 
 
-3) auto pushing to a eks cluster, with autoscaling enabled 
+# Let's GO! 
 
-[force push]
+You need these: 
+
+
+
+[force push v3]

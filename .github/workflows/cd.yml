@@ -54,7 +54,9 @@ jobs:
         export KUBECONFIG=kubeconfig.yaml
                 
         SHA_URL="${{ env.SHORT_SHA }}"
+        GCR_REPRO_URL="${{ secrets.GCR_REPRO_URL }}"
         sed -i "s/SHA_URL/$SHA_URL/g" k8s/deployment.yaml
-
+        sed -i "s/GCR_REPRO_URL/$GCR_REPRO_URL/g" k8s/deployment.yaml
+        
         cat k8s/deployment.yaml
         kubectl apply -f k8s/deployment.yaml -f k8s/service.yaml

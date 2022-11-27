@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: php-k8s
-          image: 033414239422.dkr.ecr.us-east-1.amazonaws.com/fortune:SHA_URL 
+          image: GCR_REPRO_URL/fortune:SHA_URL 
           imagePullPolicy: Always
           env:
           ports:
