@@ -13,7 +13,62 @@ Commit code -> Github Actions -> Run tests -> push to Amazon EKS [Managed Kubern
 
 # Let's GO! 
 
-You need these: 
+You need these in your Github actions secrets: <br>
+<img src='https://raw.githubusercontent.com/james-ransom/eks-gha-auto-deploy-fortune/main/images/keysyouneed.png' width='700px'>
+
+# To get KUBECONFIG
+
+```
+aws eks --region us-east-1 update-kubeconfig --name fortune
+mv ~/.kube/config  ~/.kube/bk_config
+cat ~/.kube/config 
+mv ~/.kube/bk_config  ~/.kube/config
+```
+
+# Setup your EKS cluster 
+```
+eksctl create cluster --name fortune --region us-east-1
+```
+
+# Setup your nodegroup 
+```
+eksctl create nodegroup \
+  --cluster fortune \
+  --region us-east-1 \
+  --name fortune-node \
+  --node-type m5.small \
+  --nodes 1 \
+  --nodes-min 1 \
+  --nodes-max 4 
+```
+
+# Setup your container registry and get your GCR_REPRO_URL
+```
+$ aws ecr create-repository --region us-east-1 --repository-name fortune
+{
+    "repository": {
+        "repositoryArn": "arn:aws:ecr:us-east-1:XXXXXXXX:repository/fortune",
+        "registryId": "XXXXXXXX",
+        "repositoryName": "fortune",
+        "repositoryUri": "XXXXXXXX.dkr.ecr.us-east-1.amazonaws.com/fortune",
+        "createdAt": "2022-10-14T07:29:31-07:00",
+        "imageTagMutability": "MUTABLE",
+        "imageScanningConfiguration": {
+            "scanOnPush": false
+        },
+        "encryptionConfiguration": {
+            "encryptionType": "AES256"
+        }
+    }
+}
+```
+
+# Let's BUILD! Any commit will trigger a build and push! 
+
+
+
+In the above case your GCR_REPRO_URL is XXXXXXXX.dkr.ecr.us-east-1.amazonaws.com
+
 
 
 
