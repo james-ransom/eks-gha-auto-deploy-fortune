@@ -1,10 +1,10 @@
 [![cd](https://github.com/james-ransom/eks-gha-auto-deploy-fortune/actions/workflows/cd.yml/badge.svg)](https://github.com/james-ransom/eks-gha-auto-deploy-fortune/actions/workflows/cd.yml)
 
-# A simple! CI/CD
+# A simple! CI/CD 🚀
 
-Commit code -> Github Actions -> Run tests -> push to Amazon EKS [Managed Kubernetes Service – Amazon EKS]
+Commit code -> Github Actions -> Run tests -> push Amazon EKS 🔥🔥
 
-# Demo: http://fortune.dance/
+Demo: http://fortune.dance/
 
 # This is an example of: 
 
@@ -97,7 +97,7 @@ fortune	small-group-scaling	ACTIVE	2022-11-26T01:54:06Z	1		10		6			t2.small	AL2_
 ```
 
 
-# I want to scale! 
+# I want to scale! 🚀🚀🚀
 
 ```
 kubect apply -f hpa.yaml #horizontal pod scaler 
@@ -107,7 +107,7 @@ kubect apply -f hpa.yaml #horizontal pod scaler
 kubect apply -f cluster-autoscaler-autodiscover.yaml #nodeautoscaler
 ```
 
-# I want to see the scaling work! 
+# I want to see the scaling work! 🚀🚀🚀
 ```
 $ kubectl get hpa
 NAME          REFERENCE                TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
