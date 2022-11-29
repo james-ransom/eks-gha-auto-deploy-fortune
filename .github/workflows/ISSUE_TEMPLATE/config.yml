@@ -1,0 +1,7 @@
+contact_links:
+  - name: Feature Requests
+    url: https://github.com/james-ransom/eks-gha-auto-deploy-fortune/
+    about: Do you have an idea how to improve this? Feel free to post it to the discussion forum that allows voting for other users.
+  - name: Help & Support
+    url: https://github.com/james-ransom/eks-gha-auto-deploy-fortune/
+    about: Need help with installation or usage of this? Please use the discussion forum.
