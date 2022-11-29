@@ -1,38 +1,96 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
+name: Bug Report
+description: Report an bug in LinkAce. Please use this only if you identified a real error in the application.
+labels: ["Bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please use this only if you identified a real error in the application. If you need help, please use the [discussion forum](https://github.com/Kovah/LinkAce/discussions/categories/support).
+        Thanks for taking the time to fill out this bug report!
 
----
+  # General description
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the application error is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How to reproduce
+      description: How can the error be reproduced?
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: If applicable, add complete logs from the system logs.
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem.
+    validations:
+      required: false
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+  # Host details
+  - type: input
+    id: linkace-version
+    attributes:
+      label: LinkAce version
+      placeholder: v1.10.1
+    validations:
+      required: true
+  - type: dropdown
+    id: linkace-setup-method
+    attributes:
+      label: Setup Method
+      description: How did you installed LinkAce?
+      options:
+        - Docker
+        - PHP
+    validations:
+      required: true
+  - type: dropdown
+    id: linkace-setup-os
+    attributes:
+      label: Operating System
+      description: Which operating system does your host have?
+      options:
+        - Linux (Ubuntu, CentOS,...)
+        - Windows
+        - macOS
+        - other (please specify in description)
+    validations:
+      required: true
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
-**Expected behavior**
-A clear and concise description of what you expected to happen.
-
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+  # Client details
+  - type: textarea
+    id: client-details
+    attributes:
+      label: Client details
+      description: Details about your browser and operating system used to access LinkAce. Useful if interface issues need to be solved.
+      placeholder: |
+        - OS: [e.g. Windows, macOS, iOS, Android]
+        - Browser [e.g. Chrome, Firefox, Safari]
+        - Browser Version [e.g. 101.4]
+    validations:
+      required: false
