@@ -105,6 +105,15 @@ fortune	small-group-scaling	ACTIVE	2022-11-26T01:54:06Z	1		10		6			t2.small	AL2_
 kubect apply -f hpa.yaml #horizontal pod scaler 
 ```
 
+# Download the cluster autoscaler: 
+
+```
+curl -o cluster-autoscaler-autodiscover.yaml https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
+```
+
+Modify the YAML file and replace <YOUR CLUSTER NAME> with your cluster name. Also consider replacing the cpu and memory values as determined by your environment.
+
+
 ```
 kubect apply -f cluster-autoscaler-autodiscover.yaml #nodeautoscaler
 ```
