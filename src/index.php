@@ -13,7 +13,7 @@
       width: 80vw;
       margin: 0 auto;
   }
-  body { background-color: black; font-family: -apple-system, BlinkMacSystemFont, sans-serif;}
+  body { background-color: yellow; font-family: -apple-system, BlinkMacSystemFont, sans-serif;}
 
   </style>
 </head>
