@@ -4,7 +4,6 @@
 
 Commit code -> Github Actions -> Build Container Image -> push Amazon EKS -> Scale -> profit! 🔥🔥
 
-Demo: http://fortune.dance/
 
 # This is an example of: 
 
