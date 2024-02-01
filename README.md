@@ -1,4 +1,4 @@
-[![cd](https://github.com/james-ransom/eks-gha-auto-deploy-fortune/actions/workflows/cd.yml/badge.svg)](https://github.com/james-ransom/eks-gha-auto-deploy-fortune/actions/workflows/cd.yml)
+ok ok not doing ci i dont' want to pay aws lol 
 
 # A simple DEMO of CI/CD using GHA and EKS 🚀
 
